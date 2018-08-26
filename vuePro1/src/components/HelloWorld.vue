@@ -2,7 +2,12 @@
   <div class="hellos">
     <h1>{{ msg }}</h1>
     <a @click='goHome'>go home</a>
-    <router-view></router-view>
+    <a @click='goHome2'>go home2</a>
+      <keep-alive>
+        <transition name="bounce">
+          <router-view></router-view>
+        </transition>
+      </keep-alive>
   </div>
 </template>
 
@@ -16,7 +21,10 @@ export default {
   },
   methods: {
     goHome() {
-        this.$router.push({path: '/home'})
+        this.$router.push({name: 'Home'})
+    },
+    goHome2() {
+        this.$router.push({name: 'Home2'})
     }
   }
 }
@@ -24,18 +32,19 @@ export default {
   
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  /* @import "./assets/css/base.scss"; */
+  h1, h2 {
+    font-weight: normal;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: #42b983;
+  }
 </style>

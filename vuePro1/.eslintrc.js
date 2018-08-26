@@ -30,7 +30,8 @@ module.exports = {
     'indent': 'off',
     'no-trailing-spaces': 'off',
     'no-multiple-empty-lines': 'off',
-    'semi': 'off'
+    'semi': 'off',
+    'comma-spacing' : 'off'
 
   }
 }
