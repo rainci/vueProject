@@ -4,7 +4,7 @@
     <a @click='goHome'>go home</a>
     <a @click='goHome2'>go home2</a>
       <keep-alive>
-        <transition name="bounce">
+        <transition name="fade">
           <router-view></router-view>
         </transition>
       </keep-alive>
@@ -14,9 +14,14 @@
         <div style="width:100%;">
           <Header>我父组件传给子组件的刘雨熙</Header>
           <el-container style="height:420px;overflow:scroll">
-            <List :data="tableData">
+            <List :datass="tableData">
               <div slot="one">aaa</div>
               <div slot="two">bbb</div>
+              <template slot-scope="props">
+                <span>{{ props.age }}</span>
+                <span>{{ props.date }}</span>
+                <span>{{ props.address }}</span>
+              </template>
             </List>
           </el-container>          
         </div>
@@ -86,4 +91,12 @@ export default {
   .el-aside {
     color: #333;
   }
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+
 </style>
