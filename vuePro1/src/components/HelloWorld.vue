@@ -1,6 +1,7 @@
 <template>
   <div class="hellos">
     <h1>{{ msg }}</h1>
+    <h1>{{ reverseMsg }}</h1>
     <a @click='goHome'>go home</a>
     <a @click='goHome2'>go home2</a>
       <keep-alive>
@@ -17,10 +18,10 @@
             <List :datass="tableData">
               <div slot="one">aaa</div>
               <div slot="two">bbb</div>
-              <template slot-scope="props">
-                <span>{{ props.age }}</span>
-                <span>{{ props.date }}</span>
-                <span>{{ props.address }}</span>
+              <template slot-scope="aa">
+                <span>{{ aa.age }}</span>
+                <span>{{ aa.date }}</span>
+                <span>{{ aa.address }}</span>
               </template>
             </List>
           </el-container>          
@@ -53,6 +54,11 @@ export default {
     Navbar,
     Header,
     List  
+  },
+  computed: {
+    reverseMsg: function() {
+      return this.msg.split('').reverse().join('')
+    }
   },
   methods: {
     goHome() {
