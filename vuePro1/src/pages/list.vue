@@ -15,7 +15,7 @@
         </div>
         <div>
             <slot age="18"></slot> 
-            <slot :date="datass[0].date"></slot> 
+            <slot :date="list[0].text"></slot> 
             <slot :address="datass[1].address"></slot> 
         </div>
         <el-table :data="datass">

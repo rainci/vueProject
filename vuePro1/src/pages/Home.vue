@@ -9,16 +9,35 @@
           <el-button type="warning">警告按钮</el-button>
           <el-button type="danger">危险按钮</el-button>
         </el-row>
+        <List :datass="tableData">
+          <span slot="one">aaa</span>
+          <div slot="two">bbb</div>
+          <template slot-scope="aa">
+            <span>{{ aa.age }}</span>
+            <span>{{ aa.date }}</span>
+            <span>{{ aa.address }}</span>
+          </template>
+        </List>
     </div>
 </template>
 <script>
+import List from './list.vue'
 export default {
   name: "Home",
-  data() {
-    return {
-      msg: "刘雨熙的home"
+  components: {
+    List
+  },
+  data () {
+    const item = {
+        date: '2016-05-02',
+        name: '王小虎er',
+        address: '上海市普陀区金沙江路 1518 弄'
     };
-  }
+    return {
+      msg: '刘雨熙的home页',
+      tableData: Array(20).fill(item)
+    }
+  },
 };
 </script>
 

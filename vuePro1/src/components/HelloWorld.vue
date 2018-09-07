@@ -3,27 +3,18 @@
     <h1>{{ msg }}</h1>
     <h1>{{ reverseMsg }}</h1>
     <a @click='goHome'>go home</a>
-    <a @click='goHome2'>go home2</a>
-      <keep-alive>
-        <transition name="fade">
-          <router-view></router-view>
-        </transition>
-      </keep-alive>
+    <a @click='goBase'>go base</a>
     <el-container style="height: 500px; border: 1px solid #eee;">
       <Navbar></Navbar>
       <el-container>
         <div style="width:100%;">
           <Header>我父组件传给子组件的刘雨熙</Header>
           <el-container style="height:420px;overflow:scroll">
-            <List :datass="tableData">
-              <div slot="one">aaa</div>
-              <div slot="two">bbb</div>
-              <template slot-scope="aa">
-                <span>{{ aa.age }}</span>
-                <span>{{ aa.date }}</span>
-                <span>{{ aa.address }}</span>
-              </template>
-            </List>
+            <keep-alive>
+              <transition name="fade">
+                <router-view></router-view>
+              </transition>
+            </keep-alive>  
           </el-container>          
         </div>
       </el-container>
@@ -64,8 +55,8 @@ export default {
     goHome() {
         this.$router.push({name: 'Home'})
     },
-    goHome2() {
-        this.$router.push({name: 'Home2'})
+    goBase() {
+        this.$router.push({name: 'Base'})
     }
   }
 }
