@@ -11,7 +11,7 @@
           <Header>我父组件传给子组件的刘雨熙</Header>
           <el-container style="height:420px;overflow:scroll">
             <keep-alive>
-              <transition name="fade">
+              <transition name="fade" mode="out-in">
                 <router-view></router-view>
               </transition>
             </keep-alive>  

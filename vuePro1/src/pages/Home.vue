@@ -12,11 +12,14 @@
         <List :datass="tableData">
           <span slot="one">aaa</span>
           <div slot="two">bbb</div>
+          <!-- aa代表插槽作用域名称，对应父组件中<div class="default"> <slot :address="datass[1].address"></slot> </div> -->
           <template slot-scope="aa">
-            <span>{{ aa.age }}</span>
-            <span>{{ aa.date }}</span>
-            <span>{{ aa.address }}</span>
+            <span v-if="aa.address">✓</span>
           </template>
+          <!-- 下面的书写方式和上面的结果一致 -->
+          <!-- <template slot-scope="{address}"> 
+            <span v-if="address">x</span>
+          </template> -->
         </List>
     </div>
 </template>

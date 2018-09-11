@@ -7,15 +7,16 @@
                 :item= "i"
             ></Item>    
         </ol>
+        <div>
+            <p>list: {{list}}</p>
+        </div>
         <div class="test-two">
             <slot name="two"></slot>
         </div>
         <div class="test-one">
             <slot name="one"></slot>
         </div>
-        <div>
-            <slot age="18"></slot> 
-            <slot :date="list[0].text"></slot> 
+        <div class="default">
             <slot :address="datass[1].address"></slot> 
         </div>
         <el-table :data="datass">

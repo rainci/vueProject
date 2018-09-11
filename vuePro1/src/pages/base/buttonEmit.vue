@@ -4,18 +4,22 @@
         <input 
             type="text"
            :value="val"
+           :title="title"
+           :id="id"
             @input="$emit('input',$event.target.value)"
         >
+        <p>numId:{{numId}}</p>
     </div>
     
 </template>
 <script>
     export default {
         name: 'ButtonEmit',
-        props: ['val'],
+        props: ['val','id','title'],
         data(){
             return {
-                count: 0
+                count: 0,
+                numId: this.id
 
             }
         }
