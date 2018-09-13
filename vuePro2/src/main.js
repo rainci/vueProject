@@ -13,15 +13,18 @@ new Vue({
   computed: {
     viewComponent(){
       const matchCom = router[this.currentRouter];
-      return matchCom
       // return matchCom
-      //     ? require('./pages/'+ matchCom + '.vue')
-      //     : require('./pages/404.vue')
+      debugger
+      var c = matchCom
+          ? require('./pages/'+ matchCom + '.vue')
+          : ''
+      console.log(c)
+      return c
     }  
   },
   render(h){
-    // return h(this.viewComponent)
-    return h(Home)
+    return h(this.viewComponent)
+    // return h(Home)
   }
 })
 
