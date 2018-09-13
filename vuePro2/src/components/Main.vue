@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <!-- <ul>
-            <Link v-for="itme in nav" :href="item.url"></Link>
-        </ul> -->
+        <ul>
+            <!-- <Link v-for="itme in nav" :href="item.url"></Link> -->
+        </ul>
         <div>
             <slot></slot>
         </div>

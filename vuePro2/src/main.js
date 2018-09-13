@@ -13,13 +13,12 @@ new Vue({
   computed: {
     viewComponent(){
       const matchCom = router[this.currentRouter];
-      // return matchCom
-      debugger
-      var c = matchCom
-          ? require('./pages/'+ matchCom + '.vue')
+      // debugger
+      return matchCom
+          ? require(`./pages/${matchCom}.vue`).default
           : ''
-      console.log(c)
-      return c
+     
+
     }  
   },
   render(h){
