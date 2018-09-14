@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <ul>
-            <!-- <Link v-for="itme in nav" :href="item.url"></Link> -->
+        <ul v-if="nav.length">
+            <Link v-for="i in nav" :href="i.url" :key="i.id" @go="gogo" :context="i">{{i.name}}</Link>
         </ul>
         <div>
             <slot></slot>
@@ -15,13 +15,18 @@
         data(){
             return {
                 nav: [
-                    {name: 'home page',url:'/'},
-                    {name: 'about page',url:'/about'},
+                    {name: 'home page',url:'/',id:1},
+                    {name: 'about page',url:'/about',id:2},
                 ]
             }
         },
         components:{
             Link
+        },
+        methods: {
+            gogo(event){
+                console.log(`let us go,${event.target.id}`)
+            }
         }
     }
 </script>

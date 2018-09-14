@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import router from './router'
-import Home from './pages/Home.vue'
 
 // Vue.config.productionTip = false
 
@@ -13,17 +12,13 @@ new Vue({
   computed: {
     viewComponent(){
       const matchCom = router[this.currentRouter];
-      // debugger
       return matchCom
           ? require(`./pages/${matchCom}.vue`).default
-          : ''
-     
-
+          : require(`./pages/404.vue`).default
     }  
   },
   render(h){
     return h(this.viewComponent)
-    // return h(Home)
   }
 })
 

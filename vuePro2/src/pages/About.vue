@@ -1,12 +1,12 @@
 <template>
     <Main>
-        <p>Home page !</p>
+        <p>About page !</p>
     </Main>
 </template>
 <script>
     import Main from '../components/Main.vue'
     export default {
-        name: 'Home',
+        name: 'About',
         components: {
             Main    
         }

@@ -1,5 +1,6 @@
 export default {
-  '/': 'Home'
+  '/': 'Home',
+  '/about': 'About'
 }
 // import Vue from 'vue'
 // import Router from 'vue-router'
