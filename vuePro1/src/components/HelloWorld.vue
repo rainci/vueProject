@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     goHome() {
-        this.$router.push({name: 'Home'})
+        this.$router.push({name: 'MyHome'})
     },
     goBase() {
         this.$router.push({name: 'Base'})

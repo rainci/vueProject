@@ -25,10 +25,23 @@ export default new Router({
         }
       ]
     },
+    // {
+    //   path: '/myhome',
+    //   name: 'MyHome',
+    //   redirect: '/home'
+    // },
     {
       path: '/myhome',
-      name: 'Home',
-      component: Home
+      name: 'MyHome',
+      redirect: { name: 'Home' }
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    // return { x: 100, y: 100 } // return 期望滚动到哪个的位置
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 })
+      }, 3000)
+    })
+  }
 })
