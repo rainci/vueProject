@@ -25,5 +25,11 @@ export default new Vuex.Store({
         state.password= '';
         state.isLogin = false; 
        } 
+    },
+    actions: {
+        logOut(context){
+            context.commit('logout')
+        }
     }
+    
 });

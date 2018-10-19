@@ -44,7 +44,7 @@ export default {
       this.$store.commit('showLogin',false)  
     },
     logout(){
-      this.$store.commit('logout')  
+      this.$store.dispatch('logOut')
     }
   }
 }
