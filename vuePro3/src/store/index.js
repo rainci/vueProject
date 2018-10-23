@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 var state = {
     msg: 'wow vuex',
+    count: 1,
     mobile: '',
     password: '',
     isShowLogin: false,
@@ -11,6 +12,14 @@ var state = {
 Vue.use(Vuex)
 export default new Vuex.Store({
     state,
+    getters: {
+        countDouble(state){//getters里的方法，第一个参数是store中的state，第二个是getters本身
+            return state.count*2;
+        },
+        countDoubleAndDouble(state,getters){
+            return getters.countDouble*2;
+        }
+    },
     mutations: {
        showLogin(state,flag){
             state.isShowLogin = flag;
